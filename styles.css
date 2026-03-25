@@ -11,7 +11,8 @@ body {
 }
 
 nav {
-  margin: 0 0.94rem;
+  padding: 0 0.94rem;
+  border-bottom: #ffffff1f 0.1rem solid;
 }
 a {
   text-decoration: none;
@@ -69,4 +70,21 @@ ul {
 
 #sections-shortcuts li {
   margin: 0rem 1rem;
+}
+
+#resume li {
+  font-size: 0.9375rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 10rem;
+  height: 2.375rem;
+  border-radius: 1.1875rem;
+  opacity: 0.8;
+  background: linear-gradient(
+    272deg,
+    rgba(172, 152, 218, 0.9) 6.28%,
+    rgba(52, 0, 173, 0.9) 96.61%
+  );
+  box-shadow: 3px 10px 7px 0 rgba(0, 0, 0, 0.25) inset;
 }
