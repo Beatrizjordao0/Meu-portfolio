@@ -72,6 +72,31 @@ ul {
   margin: 0rem 1rem;
 }
 
+#sections-shortcuts a {
+  display: inline-block;
+  position: relative;
+  transition: 0.3s;
+}
+
+#sections-shortcuts a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background: #ac98da;
+  transition: 0.3s;
+}
+
+#sections-shortcuts a:hover {
+  transform: scale(1.1);
+}
+
+#sections-shortcuts a:hover::after {
+  width: 100%;
+}
+
 #resume li {
   font-size: 0.9375rem;
   display: flex;
@@ -92,9 +117,10 @@ ul {
 /* -------------------------------------------------------------------------- */
 
 .hero {
-  background-color: #55d726;
-  height: 39.33363rem;
-  position: relative;
+  height: 40rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .my-img {
@@ -103,11 +129,56 @@ ul {
 }
 
 .myphoto {
-  background-color: bisque;
-  min-width: 30rem;
-  min-height: 30rem;
+  background-color: #3400ad;
+  width: 100%;
   display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
 }
 
 .circulo {
+  border-radius: 50%;
+  min-width: 30rem;
+  min-height: 30rem;
+  position: absolute;
+}
+
+.borrado2 {
+  width: 35rem;
+  height: 35rem;
+  background: linear-gradient(90deg, #3400ad, #ac98da);
+  filter: blur(50px);
+}
+.txt {
+  white-space: nowrap;
+  text-align: center;
+  text-shadow: 0 4px 4px #ac98da;
+  font-size: 6.25rem;
+  background: linear-gradient(90deg, #3400ad 0%, #ece4ff 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.texto-atras {
+  position: absolute;
+  width: 100%;
+  overflow: hidden;
+  z-index: 0; /* fica atrás */
+}
+.track {
+  display: flex;
+  width: max-content;
+  gap: 5rem;
+
+  animation: slide 10s linear infinite;
+}
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-33.33%);
+  }
 }
