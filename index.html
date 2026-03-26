@@ -38,7 +38,13 @@
             <li><a href="#contact">Contact</a></li>
           </div>
           <div id="resume">
-            <li><a href="">My Resume</a></li>
+            <li>
+              <a
+                href="public/Document/curriculo.pdf"
+                download="Beatriz Jordão - Currículo"
+                >My Resume</a
+              >
+            </li>
           </div>
         </ul>
       </nav>
@@ -67,7 +73,31 @@
     </section>
     <!-- ---------------------ABOUT----------------------- -->
 
-    <section id="about"></section>
+    <section id="about">
+      <div class="skills-container">
+        <h1>About Me</h1>
+        <p>
+          I am a Computer Science student and developer focused on building
+          practical solutions through technology. I work mainly with Python,
+          creating tools that simplify processes and improve everyday workflows,
+          as well as developing user-friendly web applications.
+        </p>
+        <p>
+          I am passionate about understanding how things work and turning ideas
+          into real, functional systems. My projects often reflect my interest
+          in creating positive impact, especially in areas related to
+          sustainability and helping people through technology.
+        </p>
+        <p>
+          I am constantly learning and expanding my skills, always looking for
+          new challenges that allow me to grow both technically and creatively.
+        </p>
+      </div>
+      <div class="photo2">
+        <img class="c" src="public/images/my-photo-2.png" alt="" />
+        <div class="glow"></div>
+      </div>
+    </section>
     <!-- ---------------------SKILLS---------------------- -->
 
     <section id="skills"></section>
@@ -78,5 +108,41 @@
 
     <section id="contact"></section>
     <!-- ------------------------------------------------- -->
+    <div class="cursor"></div>
+
+    <script>
+      const cursor = document.querySelector(".cursor");
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.left = e.clientX + "px";
+        cursor.style.top = e.clientY + "px";
+      });
+
+      let lastX = 0;
+      let lastY = 0;
+
+      document.addEventListener("mousemove", (e) => {
+        const dx = e.clientX - lastX;
+        const dy = e.clientY - lastY;
+
+        const angle = Math.atan2(dy, dx) * (180 / Math.PI);
+
+        const trail = document.createElement("div");
+        trail.classList.add("trail");
+
+        trail.style.left = e.clientX + "px";
+        trail.style.top = e.clientY + "px";
+        trail.style.transform += ` rotate(${angle}deg)`;
+
+        document.body.appendChild(trail);
+
+        setTimeout(() => {
+          trail.remove();
+        }, 200);
+
+        lastX = e.clientX;
+        lastY = e.clientY;
+      });
+    </script>
   </body>
 </html>
